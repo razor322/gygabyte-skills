@@ -2,30 +2,30 @@
 
 Agent Skills for AI coding agents, by [@gygabyte.lab](https://www.instagram.com/gygabyte.lab) ([razor322](https://github.com/razor322) on GitHub).
 
-![npm version](https://img.shields.io/npm/v/gygabyte-skills?color=cb3837&logo=npm)
-![license](https://img.shields.io/npm/l/gygabyte-skills)
+[![npm version](https://img.shields.io/npm/v/gygabyte-skills?color=cb3837&logo=npm)](https://www.npmjs.com/package/gygabyte-skills)
+[![license](https://img.shields.io/npm/l/gygabyte-skills)](https://github.com/razor322/gygabyte-skills/blob/main/LICENSE)
+[![skills.sh](https://skills.sh/b/razor322/gygabyte-skills)](https://skills.sh/razor322/gygabyte-skills)
 
+**[English](README.md)** · [Bahasa Indonesia](README.id.md)
 
+| Skill | Use it for |
+| --- | --- |
+| `ai-assisted-coding` | 🤖 Build and debug apps with an AI coding agent using Lauren Tan's GrokBot discipline — clean workarounds, no comment crutches, mistakes become lint/CI rules, one standard pattern, one reusable verification CLI, and a Feature Map |
+| `core-engineering-standards` | 🏗️ Write, review, and refactor production-grade code — SRP, short functions with early returns, explicit typing, no hardcoded values, 3-layer architecture, explicit error handling, schema validation, and minimal diffs |
 
-| Skill                        | Use it for                                                                                                                                                                                                                            |
-| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `ai-assisted-coding`         | 🤖 Build and debug apps with an AI coding agent using Lauren Tan's GrokBot discipline — clean workarounds, no comment crutches, mistakes become lint/CI rules, one standard pattern, one reusable verification CLI, and a Feature Map |
-| `core-engineering-standards` | 🏗️ Write, review, and refactor production-grade code — SRP, short functions with early returns, explicit typing, no hardcoded values, 3-layer architecture, explicit error handling, schema validation, and minimal diffs            |
+## 📊 What changes when you use these skills?
 
+Picture two developers given the exact same task. One uses these skills, one does not. Both versions **work** — but the one built with the skills is cleaner, safer, and far easier for the next person (or the next AI) to continue.
 
-## 📊 Apa bedanya kalau skill ini dipakai?
+### 🔍 The difference you notice right away
 
-Bayangkan dua orang diberi tugas yang sama persis. Satu pakai skill ini, satu tidak. Kode keduanya **sama-sama jalan** — tapi yang pakai skill menghasilkan kode yang lebih rapi, lebih aman, dan lebih mudah dilanjutkan orang lain (atau AI) berikutnya.
+- 🌀 **Code stops nesting like a pyramid** — deeply stacked `if`s become a flat, readable flow.
+- 🏷️ **Every function is explicitly typed** — parameters and return values are declared.
+- 🔢 **No "magic" numbers or strings** — each one gets a name in a single place, easy to change.
+- 💬 **No "do not touch" comments or `TODO`s** — rules live in lint and tests, not in sticky notes.
+- 🧾 **There is a way to prove it works** — one verification command, plus a feature map so the AI stops guessing.
 
-### 🔍 Contoh perubahan yang langsung terlihat
-
-- 🌀 **Kode tidak lagi bertingkat-rumit** — dari piramida `if` bersarang jadi alur yang datar dan mudah dibaca.
-- 🏷️ **Semua fungsi bertipe jelas** — parameter dan nilai kembaliannya dinyatakan eksplisit.
-- 🔢 **Tidak ada angka atau teks "ajaib"** — semuanya diberi nama di satu tempat, gampang diubah.
-- 💬 **Tidak ada komentar "jangan diubah" / `TODO`** — aturan ditulis lewat lint dan test, bukan tempelan.
-- 🧾 **Ada cara buktikan kode jalan** — satu perintah verifikasi, plus peta fitur supaya AI tidak menebak-nebak.
-
-> Ini adalah contoh ilustratif dari tugas kecil yang kami coba (registrasi user, endpoint API, dan satu file proyek nyata). Bukan jaminan angka pasti di proyek Anda — hasilnya tetap bergantung pada basis kode dan cara AI dipakai. Yang kami tunjukkan di sini adalah **bentuk dampaknya**, bukan angka yang dijanjikan.
+> These are illustrative results from small tasks we tried (user registration, an API endpoint, and one file from a real project). They are not a guaranteed score for your codebase — outcomes still depend on your project and how you use the AI. What is shown here is the **shape of the impact**, not a promised number.
 
 ## 📦 Installation
 
@@ -70,7 +70,7 @@ npm install gygabyte-skills
 # node_modules/gygabyte-skills/skills/core-engineering-standards/SKILL.md
 ```
 
-Atau install pakai skills CLI:
+Or install with the skills CLI:
 
 ```sh
 npx skills add razor322/gygabyte-skills
@@ -131,6 +131,7 @@ gygabyte-skills/
 ├── .codex-plugin/plugin.json
 ├── AGENTS.md
 ├── README.md
+├── README.id.md
 ├── LICENSE
 ├── package.json
 ├── skills/
