@@ -2,12 +2,16 @@
 
 Agent Skills for AI coding agents, by [@gygabyte.lab](https://www.instagram.com/gygabyte.lab) ([razor322](https://github.com/razor322) on GitHub).
 
-[![skills.sh](https://skills.sh/b/razor322/gygabyte-skills)](https://skills.sh/razor322/gygabyte-skills)
+![npm version](https://img.shields.io/npm/v/gygabyte-skills?color=cb3837&logo=npm)
+![license](https://img.shields.io/npm/l/gygabyte-skills)
 
-| Skill | Use it for |
-| --- | --- |
-| `ai-assisted-coding` | 🤖 Build and debug apps with an AI coding agent using Lauren Tan's GrokBot discipline — clean workarounds, no comment crutches, mistakes become lint/CI rules, one standard pattern, one reusable verification CLI, and a Feature Map |
-| `core-engineering-standards` | 🏗️ Write, review, and refactor production-grade code — SRP, short functions with early returns, explicit typing, no hardcoded values, 3-layer architecture, explicit error handling, schema validation, and minimal diffs |
+
+
+| Skill                        | Use it for                                                                                                                                                                                                                            |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ai-assisted-coding`         | 🤖 Build and debug apps with an AI coding agent using Lauren Tan's GrokBot discipline — clean workarounds, no comment crutches, mistakes become lint/CI rules, one standard pattern, one reusable verification CLI, and a Feature Map |
+| `core-engineering-standards` | 🏗️ Write, review, and refactor production-grade code — SRP, short functions with early returns, explicit typing, no hardcoded values, 3-layer architecture, explicit error handling, schema validation, and minimal diffs            |
+
 
 ## 📊 Apa bedanya kalau skill ini dipakai?
 
