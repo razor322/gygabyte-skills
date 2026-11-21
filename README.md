@@ -2,6 +2,8 @@
 
 Agent Skills for AI coding agents, by [@gygabyte.lab](https://www.instagram.com/gygabyte.lab) ([razor322](https://github.com/razor322) on GitHub).
 
+[![skills.sh](https://skills.sh/b/razor322/gygabyte-skills)](https://skills.sh/razor322/gygabyte-skills)
+
 | Skill | Use it for |
 | --- | --- |
 | `ai-assisted-coding` | Build and debug apps with an AI coding agent using Lauren Tan's GrokBot discipline — clean workarounds, no comment crutches, mistakes become lint/CI rules, one standard pattern, one reusable verification CLI, and a Feature Map |
@@ -106,6 +108,10 @@ gygabyte-skills/
 └── templates/
     └── AGENTS.md
 ```
+
+## skills.sh listing
+
+Skills appear on [skills.sh](https://skills.sh) automatically through anonymous telemetry when someone runs `npx skills add razor322/gygabyte-skills`. No manual submission. Security audits are generated after the first install. Until the first install, the skills.sh page stays empty; the badge above is just a ready link.
 
 ## Adding a new skill
 
