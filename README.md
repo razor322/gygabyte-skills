@@ -7,6 +7,7 @@ Agent Skills for AI coding agents, by [@gygabyte.lab](https://www.instagram.com/
 | Skill | Use it for |
 | --- | --- |
 | `ai-assisted-coding` | Build and debug apps with an AI coding agent using Lauren Tan's GrokBot discipline — clean workarounds, no comment crutches, mistakes become lint/CI rules, one standard pattern, one reusable verification CLI, and a Feature Map |
+| `core-engineering-standards` | Write, review, and refactor production-grade code — SRP, short functions with early returns, explicit typing, no hardcoded values, 3-layer architecture, explicit error handling, schema validation, and minimal diffs |
 
 ## Installation
 
@@ -18,6 +19,7 @@ npx skills add razor322/gygabyte-skills
 
 # one skill only
 npx skills add razor322/gygabyte-skills --skill ai-assisted-coding
+npx skills add razor322/gygabyte-skills --skill core-engineering-standards
 
 # global, for all projects
 npx skills add razor322/gygabyte-skills -g
@@ -47,19 +49,26 @@ Inside a Codex session, the equivalent commands are `/plugin marketplace add raz
 npm install gygabyte-skills
 # skill files live in:
 # node_modules/gygabyte-skills/skills/ai-assisted-coding/SKILL.md
+# node_modules/gygabyte-skills/skills/core-engineering-standards/SKILL.md
+```
+
+Atau install pakai skills CLI:
+
+```sh
+npx skills add razor322/gygabyte-skills
 ```
 
 Then copy that folder into your agent's skills directory, for example:
 
 ```bash
 # Claude Code (project)
-cp -r node_modules/gygabyte-skills/skills/ai-assisted-coding .claude/skills/
+cp -r node_modules/gygabyte-skills/skills/. .claude/skills/
 # Claude Code (global)
-cp -r node_modules/gygabyte-skills/skills/ai-assisted-coding ~/.claude/skills/
+cp -r node_modules/gygabyte-skills/skills/. ~/.claude/skills/
 # Codex
-cp -r node_modules/gygabyte-skills/skills/ai-assisted-coding .agents/skills/
+cp -r node_modules/gygabyte-skills/skills/. .agents/skills/
 # opencode / OpenCode
-cp -r node_modules/gygabyte-skills/skills/ai-assisted-coding .opencode/skills/
+cp -r node_modules/gygabyte-skills/skills/. .opencode/skills/
 ```
 
 ### Manual installation
@@ -68,9 +77,15 @@ Copy each entire leaf skill directory, including its references and assets, into
 
 ### No agent skills support? Use the project rules file
 
-Copy `templates/AGENTS.md` into your project root as `AGENTS.md` (or `CLAUDE.md`) and fill in the project-specific standards. Same rules as `ai-assisted-coding`, no skill loader needed.
+Copy `templates/AGENTS.md` into your project root as `AGENTS.md` (or `CLAUDE.md`) and fill in the project-specific standards. Rules from both skills, no skill loader needed.
 
 ## Skills
+
+### core-engineering-standards
+
+Write, review, and refactor production-grade code in any language or framework. Covers clean idiomatic code, SRP, functions under 30-40 lines, early returns with at most two nesting levels, explicit typing, no hardcoded values, presentation/application/infrastructure layering with no cross-contamination, explicit error handling with structured dev logs and sanitized user messages, schema validation at external boundaries, and surgical minimal diffs. Works alongside `ai-assisted-coding`: that skill governs how the agent works with AI, this one governs how the code is written.
+
+Full instructions: [`skills/core-engineering-standards/SKILL.md`](skills/core-engineering-standards/SKILL.md)
 
 ### ai-assisted-coding
 
@@ -101,9 +116,12 @@ gygabyte-skills/
 ├── LICENSE
 ├── package.json
 ├── skills/
-│   └── ai-assisted-coding/
+│   ├── ai-assisted-coding/
+│   │   ├── SKILL.md
+│   │   ├── references/feature-map-template.md
+│   │   └── assets/AGENTS.md
+│   └── core-engineering-standards/
 │       ├── SKILL.md
-│       ├── references/feature-map-template.md
 │       └── assets/AGENTS.md
 └── templates/
     └── AGENTS.md
@@ -117,7 +135,7 @@ Skills appear on [skills.sh](https://skills.sh) automatically through anonymous 
 
 1. Create `skills/<name>/SKILL.md` with valid frontmatter (`name` must match the folder name).
 2. Add a row to the catalog table above.
-3. Bump `version` in `package.json`, `.claude-plugin/plugin.json`, and `.codex-plugin/plugin.json` together.
+3. Bump `version` in `package.json`, `.claude-plugin/plugin.json`, and `.codex-plugin/plugin.json`, plus `metadata.version` in each `SKILL.md`.
 4. Publish: `npm publish --access public` (npm) and push to GitHub (for `npx skills add` and plugin marketplaces).
 
 ## License

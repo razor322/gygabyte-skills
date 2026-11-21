@@ -1,14 +1,14 @@
 {
   "name": "gygabyte",
   "displayName": "Gygabyte Skills",
-  "version": "1.0.1",
-  "description": "Agent Skills for AI coding agents. First skill: ai-assisted-coding — Lauren Tan's GrokBot discipline for clean, verifiable AI-assisted development.",
+  "version": "1.1.0",
+  "description": "Agent Skills for AI coding agents: ai-assisted-coding (Lauren Tan's GrokBot discipline) and core-engineering-standards (clean code, layered architecture, explicit error handling, minimal diffs).",
   "author": {
     "name": "gygabyte.lab",
     "url": "https://github.com/razor322"
   },
   "repository": "https://github.com/razor322/gygabyte-skills",
   "license": "MIT",
-  "keywords": ["agent-skills", "ai-coding", "coding-agent", "code-quality", "verification"],
-  "skills": ["./skills/ai-assisted-coding/"]
+  "keywords": ["agent-skills", "ai-coding", "coding-agent", "code-quality", "engineering-standards", "verification"],
+  "skills": ["./skills/ai-assisted-coding/", "./skills/core-engineering-standards/"]
 }

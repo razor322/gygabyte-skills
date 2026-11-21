@@ -5,7 +5,7 @@ license: MIT
 compatibility: Works with Claude Code, Cursor, Codex, OpenCode, opencode, Muse, and any agent that reads Agent Skills (SKILL.md).
 metadata:
   author: gygabyte.lab
-  version: "1.0.1"
+  version: "1.1.0"
   source: Lauren Tan (@poteto), GrokBot engineer at SpaceXAI, via @christina.atelier on TikTok ("How A GrokBot Engineer Utilizes AI for Coding")
   tags: ["ai-coding", "coding-agent", "refactoring", "lint", "testing", "code-quality"]
 ---
