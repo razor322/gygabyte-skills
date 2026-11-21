@@ -1,0 +1,20 @@
+{
+  "name": "gygabyte",
+  "version": "1.0.0",
+  "description": "Agent Skills for AI coding agents. First skill: ai-assisted-coding — Lauren Tan's GrokBot discipline for clean, verifiable AI-assisted development.",
+  "author": {
+    "name": "gygabyte.lab",
+    "url": "https://github.com/razor322"
+  },
+  "repository": "https://github.com/razor322/gygabyte-skills",
+  "skills": "./skills/ai-assisted-coding/",
+  "interface": {
+    "displayName": "Gygabyte Skills",
+    "shortDescription": "Reusable discipline for AI coding agents",
+    "longDescription": "Apply Lauren Tan's GrokBot coding discipline: clean the codebase before AI copies it, encode rules in lint/tests instead of comments, turn repeated mistakes into CI guards, keep one standard pattern per job, verify through one reusable CLI, and maintain a Feature Map.",
+    "developerName": "gygabyte.lab",
+    "category": "Developer Tools",
+    "capabilities": ["Guide implementation", "Review code quality"],
+    "websiteURL": "https://github.com/razor322/gygabyte-skills"
+  }
+}

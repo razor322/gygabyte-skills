@@ -1,0 +1,14 @@
+{
+  "name": "gygabyte-skills",
+  "description": "Gygabyte Agent Skills — reusable discipline for AI coding agents.",
+  "owner": {
+    "name": "razor322"
+  },
+  "plugins": [
+    {
+      "name": "gygabyte",
+      "source": "./",
+      "description": "Agent Skills for AI coding agents"
+    }
+  ]
+}
