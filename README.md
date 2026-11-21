@@ -1,4 +1,4 @@
-# Gygabyte Skills
+# 🛠️ Gygabyte Skills
 
 Agent Skills for AI coding agents, by [@gygabyte.lab](https://www.instagram.com/gygabyte.lab) ([razor322](https://github.com/razor322) on GitHub).
 
@@ -6,12 +6,26 @@ Agent Skills for AI coding agents, by [@gygabyte.lab](https://www.instagram.com/
 
 | Skill | Use it for |
 | --- | --- |
-| `ai-assisted-coding` | Build and debug apps with an AI coding agent using Lauren Tan's GrokBot discipline — clean workarounds, no comment crutches, mistakes become lint/CI rules, one standard pattern, one reusable verification CLI, and a Feature Map |
-| `core-engineering-standards` | Write, review, and refactor production-grade code — SRP, short functions with early returns, explicit typing, no hardcoded values, 3-layer architecture, explicit error handling, schema validation, and minimal diffs |
+| `ai-assisted-coding` | 🤖 Build and debug apps with an AI coding agent using Lauren Tan's GrokBot discipline — clean workarounds, no comment crutches, mistakes become lint/CI rules, one standard pattern, one reusable verification CLI, and a Feature Map |
+| `core-engineering-standards` | 🏗️ Write, review, and refactor production-grade code — SRP, short functions with early returns, explicit typing, no hardcoded values, 3-layer architecture, explicit error handling, schema validation, and minimal diffs |
 
-## Installation
+## 📊 Apa bedanya kalau skill ini dipakai?
 
-### With the skills CLI (recommended — works for 40+ agents)
+Bayangkan dua orang diberi tugas yang sama persis. Satu pakai skill ini, satu tidak. Kode keduanya **sama-sama jalan** — tapi yang pakai skill menghasilkan kode yang lebih rapi, lebih aman, dan lebih mudah dilanjutkan orang lain (atau AI) berikutnya.
+
+### 🔍 Contoh perubahan yang langsung terlihat
+
+- 🌀 **Kode tidak lagi bertingkat-rumit** — dari piramida `if` bersarang jadi alur yang datar dan mudah dibaca.
+- 🏷️ **Semua fungsi bertipe jelas** — parameter dan nilai kembaliannya dinyatakan eksplisit.
+- 🔢 **Tidak ada angka atau teks "ajaib"** — semuanya diberi nama di satu tempat, gampang diubah.
+- 💬 **Tidak ada komentar "jangan diubah" / `TODO`** — aturan ditulis lewat lint dan test, bukan tempelan.
+- 🧾 **Ada cara buktikan kode jalan** — satu perintah verifikasi, plus peta fitur supaya AI tidak menebak-nebak.
+
+> Ini adalah contoh ilustratif dari tugas kecil yang kami coba (registrasi user, endpoint API, dan satu file proyek nyata). Bukan jaminan angka pasti di proyek Anda — hasilnya tetap bergantung pada basis kode dan cara AI dipakai. Yang kami tunjukkan di sini adalah **bentuk dampaknya**, bukan angka yang dijanjikan.
+
+## 📦 Installation
+
+### 🧰 With the skills CLI (recommended — works for 40+ agents)
 
 ```bash
 # all skills in this repo
@@ -25,7 +39,7 @@ npx skills add razor322/gygabyte-skills --skill core-engineering-standards
 npx skills add razor322/gygabyte-skills -g
 ```
 
-### Claude Code (plugin)
+### 🎭 Claude Code (plugin)
 
 ```sh
 claude plugin marketplace add razor322/gygabyte-skills
@@ -34,7 +48,7 @@ claude plugin install gygabyte@gygabyte-skills
 
 Inside a Claude Code session, the equivalent commands are `/plugin marketplace add razor322/gygabyte-skills` and `/plugin install gygabyte@gygabyte-skills`. Start a new session, then use `/skills` to check the installation or `/gygabyte:ai-assisted-coding` to invoke the skill.
 
-### Codex (plugin)
+### ⚡ Codex (plugin)
 
 ```sh
 codex plugin marketplace add razor322/gygabyte-skills
@@ -43,7 +57,7 @@ codex plugin install gygabyte@gygabyte-skills
 
 Inside a Codex session, the equivalent commands are `/plugin marketplace add razor322/gygabyte-skills` and `/plugin install gygabyte@gygabyte-skills`.
 
-### From npm
+### 📥 From npm
 
 ```bash
 npm install gygabyte-skills
@@ -71,38 +85,38 @@ cp -r node_modules/gygabyte-skills/skills/. .agents/skills/
 cp -r node_modules/gygabyte-skills/skills/. .opencode/skills/
 ```
 
-### Manual installation
+### 🖐️ Manual installation
 
 Copy each entire leaf skill directory, including its references and assets, into your agent's skill directory. See the npm section above for the paths per agent.
 
-### No agent skills support? Use the project rules file
+### 📄 No agent skills support? Use the project rules file
 
 Copy `templates/AGENTS.md` into your project root as `AGENTS.md` (or `CLAUDE.md`) and fill in the project-specific standards. Rules from both skills, no skill loader needed.
 
-## Skills
+## 🧩 Skills
 
-### core-engineering-standards
+### 🏗️ core-engineering-standards
 
 Write, review, and refactor production-grade code in any language or framework. Covers clean idiomatic code, SRP, functions under 30-40 lines, early returns with at most two nesting levels, explicit typing, no hardcoded values, presentation/application/infrastructure layering with no cross-contamination, explicit error handling with structured dev logs and sanitized user messages, schema validation at external boundaries, and surgical minimal diffs. Works alongside `ai-assisted-coding`: that skill governs how the agent works with AI, this one governs how the code is written.
 
 Full instructions: [`skills/core-engineering-standards/SKILL.md`](skills/core-engineering-standards/SKILL.md)
 
-### ai-assisted-coding
+### 🤖 ai-assisted-coding
 
 Based on Lauren Tan (@poteto), GrokBot engineer at SpaceXAI, via the @christina.atelier TikTok carousel *"How A GrokBot Engineer Utilizes AI for Coding"*. Lauren shipped 2,000 PRs in a month (her X post says 2,500) — the number was not the target, it followed from reusable tools, skills, a codebase AI can understand, and a verification system.
 
 The 6 rules:
 
-1. **Clean the codebase first** — AI copies patterns it sees. Remove temporary workarounds, deprecated and duplicate implementations, dead code, and hacks kept alive by comments.
-2. **No comment crutches** — encode constraints in the API/architecture, rules in lint, business rules in tests.
-3. **Every repeated AI mistake becomes a rule** — lint rule, compiler check, or CI validation, recorded in the project rules file.
-4. **One standard pattern per job** — one way to build an API endpoint, access the DB, handle errors, log, and structure a feature/module.
-5. **One reusable verification CLI** — run, control, debug, trace, and prove a change works through the same CLI every session, not a new throwaway script each time.
-6. **Keep a Feature Map** — name, function, how to reach it, shortcuts, DOM selectors, interactions, expected result — so AI stops guessing from vague screenshots.
+1. 🧹 **Clean the codebase first** — AI copies patterns it sees. Remove temporary workarounds, deprecated and duplicate implementations, dead code, and hacks kept alive by comments.
+2. 🚫 **No comment crutches** — encode constraints in the API/architecture, rules in lint, business rules in tests.
+3. 🔁 **Every repeated AI mistake becomes a rule** — lint rule, compiler check, or CI validation, recorded in the project rules file.
+4. 🎯 **One standard pattern per job** — one way to build an API endpoint, access the DB, handle errors, log, and structure a feature/module.
+5. ✅ **One reusable verification CLI** — run, control, debug, trace, and prove a change works through the same CLI every session, not a new throwaway script each time.
+6. 🗺️ **Keep a Feature Map** — name, function, how to reach it, shortcuts, DOM selectors, interactions, expected result — so AI stops guessing from vague screenshots.
 
 Full instructions: [`skills/ai-assisted-coding/SKILL.md`](skills/ai-assisted-coding/SKILL.md)
 
-## Contents
+## 🗂️ Contents
 
 ```
 gygabyte-skills/
@@ -127,17 +141,17 @@ gygabyte-skills/
     └── AGENTS.md
 ```
 
-## skills.sh listing
+## 🌐 skills.sh listing
 
 Skills appear on [skills.sh](https://skills.sh) automatically through anonymous telemetry when someone runs `npx skills add razor322/gygabyte-skills`. No manual submission. Security audits are generated after the first install. Until the first install, the skills.sh page stays empty; the badge above is just a ready link.
 
-## Adding a new skill
+## ➕ Adding a new skill
 
 1. Create `skills/<name>/SKILL.md` with valid frontmatter (`name` must match the folder name).
 2. Add a row to the catalog table above.
 3. Bump `version` in `package.json`, `.claude-plugin/plugin.json`, and `.codex-plugin/plugin.json`, plus `metadata.version` in each `SKILL.md`.
 4. Publish: `npm publish --access public` (npm) and push to GitHub (for `npx skills add` and plugin marketplaces).
 
-## License
+## 📜 License
 
 MIT — see [LICENSE](LICENSE).
