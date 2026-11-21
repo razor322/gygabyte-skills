@@ -1,7 +1,7 @@
 {
   "name": "gygabyte",
   "displayName": "Gygabyte Skills",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Agent Skills for AI coding agents: ai-assisted-coding (Lauren Tan's GrokBot discipline) and core-engineering-standards (clean code, layered architecture, explicit error handling, minimal diffs).",
   "author": {
     "name": "gygabyte.lab",
