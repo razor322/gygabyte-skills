@@ -1,4 +1,4 @@
-# <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/layers.svg" width="24" height="24" alt=""> Gygabyte Skills
+# <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/layers.svg" width="24" height="24" alt="Layers"> Gygabyte Skills
 
 Agent Skills for AI coding agents, by [@gygabyte.lab](https://www.instagram.com/gygabyte.lab) ([razor322](https://github.com/razor322) on GitHub).
 
@@ -17,11 +17,11 @@ Agent Skills for AI coding agents, by [@gygabyte.lab](https://www.instagram.com/
 | `formal-verification` | Add a formal-verification layer on top of tests — model-check the most important stateful flows and prove key algorithms — as one more layer alongside runtime verification, not a silver bullet |
 | `software-factory` | Build the outer automation loop only after the inner coding loop is solid — release-triggered fuzzing, auto-fix PRs, and automerge — because automating a slop-producing loop just produces more slop |
 
-## <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/trending-up.svg" width="18" height="18" alt=""> What changes when you use these skills?
+## <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/trending-up.svg" width="18" height="18" alt="Trending up"> What changes when you use these skills?
 
 Picture two developers given the exact same task. One uses these skills, one does not. Both versions **work** — but the one built with the skills is cleaner, safer, and far easier for the next person (or the next AI) to continue.
 
-### <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/search.svg" width="18" height="18" alt=""> The difference you notice right away
+### <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/search.svg" width="18" height="18" alt="Search"> The difference you notice right away
 
 - **Code stops nesting like a pyramid** — deeply stacked `if`s become a flat, readable flow.
 - **Every function is explicitly typed** — parameters and return values are declared.
@@ -31,9 +31,9 @@ Picture two developers given the exact same task. One uses these skills, one doe
 
 > These are illustrative results from small tasks we tried (user registration, an API endpoint, and one file from a real project). They are not a guaranteed score for your codebase — outcomes still depend on your project and how you use the AI. What is shown here is the **shape of the impact**, not a promised number.
 
-## <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/package.svg" width="18" height="18" alt=""> Installation
+## <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/package.svg" width="18" height="18" alt="Package"> Installation
 
-### <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/wrench.svg" width="18" height="18" alt=""> With the skills CLI (recommended — works for 40+ agents)
+### <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/wrench.svg" width="18" height="18" alt="Wrench"> With the skills CLI (recommended — works for 40+ agents)
 
 ```bash
 # all skills in this repo
@@ -48,7 +48,7 @@ npx skills add razor322/gygabyte-skills --skill runtime-verification
 npx skills add razor322/gygabyte-skills -g
 ```
 
-### <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/puzzle.svg" width="18" height="18" alt=""> Claude Code (plugin)
+### <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/puzzle.svg" width="18" height="18" alt="Puzzle"> Claude Code (plugin)
 
 ```sh
 claude plugin marketplace add razor322/gygabyte-skills
@@ -57,7 +57,7 @@ claude plugin install gygabyte@gygabyte-skills
 
 Inside a Claude Code session, the equivalent commands are `/plugin marketplace add razor322/gygabyte-skills` and `/plugin install gygabyte@gygabyte-skills`. Start a new session, then use `/skills` to check the installation or `/gygabyte:ai-assisted-coding` to invoke the skill.
 
-### <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/puzzle.svg" width="18" height="18" alt=""> Codex (plugin)
+### <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/puzzle.svg" width="18" height="18" alt="Puzzle"> Codex (plugin)
 
 ```sh
 codex plugin marketplace add razor322/gygabyte-skills
@@ -66,7 +66,7 @@ codex plugin install gygabyte@gygabyte-skills
 
 Inside a Codex session, the equivalent commands are `/plugin marketplace add razor322/gygabyte-skills` and `/plugin install gygabyte@gygabyte-skills`.
 
-### <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/package.svg" width="18" height="18" alt=""> From npm
+### <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/package.svg" width="18" height="18" alt="Package"> From npm
 
 ```bash
 npm install gygabyte-skills
@@ -94,23 +94,23 @@ cp -r node_modules/gygabyte-skills/skills/. .agents/skills/
 cp -r node_modules/gygabyte-skills/skills/. .opencode/skills/
 ```
 
-### <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/hammer.svg" width="18" height="18" alt=""> Manual installation
+### <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/hammer.svg" width="18" height="18" alt="Hammer"> Manual installation
 
 Copy each entire leaf skill directory, including its references and assets, into your agent's skill directory. See the npm section above for the paths per agent.
 
-### <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/scroll-text.svg" width="18" height="18" alt=""> No agent skills support? Use the project rules file
+### <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/scroll-text.svg" width="18" height="18" alt="Scroll text"> No agent skills support? Use the project rules file
 
 Copy `templates/AGENTS.md` into your project root as `AGENTS.md` (or `CLAUDE.md`) and fill in the project-specific standards. Rules from all six skills, no skill loader needed.
 
-## <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/puzzle.svg" width="18" height="18" alt=""> Skills
+## <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/puzzle.svg" width="18" height="18" alt="Puzzle"> Skills
 
-### <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/landmark.svg" width="18" height="18" alt=""> core-engineering-standards
+### <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/code.svg" width="18" height="18" alt="Code"> core-engineering-standards
 
 Write, review, and refactor production-grade code in any language or framework. Covers clean idiomatic code, SRP, functions under 30-40 lines, early returns with at most two nesting levels, explicit typing, no hardcoded values, presentation/application/infrastructure layering with no cross-contamination, explicit error handling with structured dev logs and sanitized user messages, schema validation at external boundaries, and surgical minimal diffs. Works alongside `ai-assisted-coding`: that skill governs how the agent works with AI, this one governs how the code is written.
 
 Full instructions: [`skills/core-engineering-standards/SKILL.md`](skills/core-engineering-standards/SKILL.md), plus the enforceable-architecture detail in [`skills/core-engineering-standards/references/enforceable-architecture.md`](skills/core-engineering-standards/references/enforceable-architecture.md) and the pre-submit checklist in [`skills/core-engineering-standards/references/checklist.md`](skills/core-engineering-standards/references/checklist.md).
 
-### <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/bot.svg" width="18" height="18" alt=""> ai-assisted-coding
+### <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/bot.svg" width="18" height="18" alt="Bot"> ai-assisted-coding
 
 Based on Lauren Tan (@poteto), GrokBot engineer at SpaceXAI, via the @christina.atelier TikTok carousel *"How A GrokBot Engineer Utilizes AI for Coding"* and her talk *"All Code Is Slop (Except Mine)"* (14 Nov 2026). Lauren shipped 2,000 PRs in a month (her X post says 2,500; in the talk she says 3,000 personally and 11,000 as a team, at a ~0.5% revert rate) — the number was not the target, it followed from reusable tools, skills, a codebase AI can understand, and a verification system.
 
@@ -127,31 +127,31 @@ The rules:
 
 Full instructions: [`skills/ai-assisted-coding/SKILL.md`](skills/ai-assisted-coding/SKILL.md)
 
-### <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/shield-check.svg" width="18" height="18" alt=""> enforceable-architecture
+### <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/shield-check.svg" width="18" height="18" alt="Shield check"> enforceable-architecture
 
 Turn hard-won lessons into enforceable architecture constraints instead of advice. Ban nuance-heavy APIs in product code and provide a safe wrapper (the raw API lives only inside the framework layer — e.g. React `useEffect` in Dune for Grok Bot), make the correct structure obvious through directory layout (e.g. `electron/main` vs `electron/renderer`), and enforce layer boundaries mechanically with lint and dependency analysis. Use when a pattern keeps being misused, an agent keeps crossing a layer boundary, or a rule keeps being ignored.
 
 Full instructions: [`skills/enforceable-architecture/SKILL.md`](skills/enforceable-architecture/SKILL.md)
 
-### <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/monitor-play.svg" width="18" height="18" alt=""> runtime-verification
+### <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/activity.svg" width="18" height="18" alt="Activity"> runtime-verification
 
 Give the AI agent a way to run the app itself and prove a change works. One reusable CLI/driver instead of a fresh script per session, a Feature Map as shared vocabulary from the user's point of view, and video, screenshot, and state-chart evidence instead of reviewing diffs alone. Most tokens go to verification. Use when verifying a feature, fixing a UI bug, or reviewing agent work.
 
 Full instructions: [`skills/runtime-verification/SKILL.md`](skills/runtime-verification/SKILL.md)
 
-### <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/flask-conical.svg" width="18" height="18" alt=""> formal-verification
+### <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/badge-check.svg" width="18" height="18" alt="Badge check"> formal-verification
 
 Add a formal-verification layer on top of tests: model-check the most important stateful flows with TLA+ (e.g. notifications across devices/platforms), prove key algorithms with Lean (e.g. a custom virtualisation library, so it does not flicker or jitter), and catch stateful UI edge cases with property-based testing. One more layer alongside runtime verification — not a silver bullet, and worth it first where a bug is most expensive.
 
 Full instructions: [`skills/formal-verification/SKILL.md`](skills/formal-verification/SKILL.md)
 
-### <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/factory.svg" width="18" height="18" alt=""> software-factory
+### <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/factory.svg" width="18" height="18" alt="Factory"> software-factory
 
 Build the outer automation loop only after the inner coding loop is solid. Order: correct via the codebase first, lint rule first, then clean up legacy patterns, make verification strong — only then automate. The outer loop (e.g. release-triggered fuzzing that uses the app like a real user, opens a fix PR per bug, and automerges) works only when PRs are good by default and the revert rate is low and stable. Automating a slop-producing loop just produces more slop and burns tokens.
 
 Full instructions: [`skills/software-factory/SKILL.md`](skills/software-factory/SKILL.md)
 
-## <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/folder-tree.svg" width="18" height="18" alt=""> Contents
+## <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/folder-tree.svg" width="18" height="18" alt="Folder tree"> Contents
 
 ```
 gygabyte-skills/
@@ -196,17 +196,17 @@ gygabyte-skills/
     └── AGENTS.md
 ```
 
-## <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/globe.svg" width="18" height="18" alt=""> skills.sh listing
+## <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/globe.svg" width="18" height="18" alt="Globe"> skills.sh listing
 
 Skills appear on [skills.sh](https://skills.sh) automatically through anonymous telemetry when someone runs `npx skills add razor322/gygabyte-skills`. No manual submission. Security audits are generated after the first install. Until the first install, the skills.sh page stays empty; the badge above is just a ready link.
 
-## <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/plus.svg" width="18" height="18" alt=""> Adding a new skill
+## <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/plus-circle.svg" width="18" height="18" alt="Plus circle"> Adding a new skill
 
 1. Create `skills/<name>/SKILL.md` with valid frontmatter (`name` must match the folder name).
 2. Add a row to the catalog table above.
 3. Bump `version` in `package.json`, `.claude-plugin/plugin.json`, and `.codex-plugin/plugin.json`, plus `metadata.version` in each `SKILL.md`.
 4. Publish: `npm publish --access public` (npm) and push to GitHub (for `npx skills add` and plugin marketplaces).
 
-## <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/scroll-text.svg" width="18" height="18" alt=""> License
+## <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/scale.svg" width="18" height="18" alt="Scale"> License
 
 MIT — see [LICENSE](LICENSE).
