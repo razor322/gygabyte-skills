@@ -1,1 +1,48 @@
-{"author":"gygabyte.lab","bugs":{"url":"https://github.com/razor322/gygabyte-skills/issues"},"description":"Gygabyte Skills — a collection of Agent Skills for AI coding agents (Claude Code, Codex, Cursor, OpenCode, opencode, Muse). Skills: ai-assisted-coding and core-engineering-standards.","engines":{"node":">=18"},"files":[".agents/",".claude-plugin/",".codex-plugin/","skills/","templates/","README.md","README.id.md","LICENSE"],"homepage":"https://github.com/razor322/gygabyte-skills","keywords":["agent-skills","skills","claude-code","codex","ai-coding","coding-agent","code-quality","engineering-standards","opencode","cursor"],"license":"MIT","name":"gygabyte-skills","pi":{"skills":["skills"]},"repository":{"type":"git","url":"git+https://github.com/razor322/gygabyte-skills.git"},"version":"1.1.1"}
+{
+  "author": "gygabyte.lab",
+  "bugs": {
+    "url": "https://github.com/razor322/gygabyte-skills/issues"
+  },
+  "description": "Gygabyte Skills — a collection of Agent Skills for AI coding agents (Claude Code, Codex, Cursor, OpenCode, opencode, Muse). Skills: ai-assisted-coding, core-engineering-standards, enforceable-architecture, runtime-verification, formal-verification, software-factory.",
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    ".agents/",
+    ".claude-plugin/",
+    ".codex-plugin/",
+    "skills/",
+    "templates/",
+    "README.md",
+    "README.id.md",
+    "LICENSE"
+  ],
+  "homepage": "https://github.com/razor322/gygabyte-skills",
+  "keywords": [
+    "agent-skills",
+    "ai-coding",
+    "architecture",
+    "claude-code",
+    "code-quality",
+    "codex",
+    "coding-agent",
+    "cursor",
+    "engineering-standards",
+    "formal-verification",
+    "opencode",
+    "skills",
+    "verification"
+  ],
+  "license": "MIT",
+  "name": "gygabyte-skills",
+  "pi": {
+    "skills": [
+      "skills"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/razor322/gygabyte-skills.git"
+  },
+  "version": "1.2.0"
+}

@@ -18,6 +18,13 @@ Rules for any agent working in this project. Fill in the placeholders with this 
 - No raw DB query, network call, or heavy business logic in UI components / controllers.
 - Split files approaching 200-250 lines into focused modules.
 
+## Enforceable architecture
+
+- Encode hard-won lessons as constraints, not advice. Anything that needs nuance to use well tends to produce slop.
+- Ban nuance-heavy APIs in product code and provide a safe wrapper instead. Example: React `useEffect` banned in product code, allowed only inside the framework APIs (Grok Bot/Dune).
+- Make the correct structure obvious through directory names, then enforce the boundary mechanically. Example: `electron/main` vs `electron/renderer` as top-level directories, imports between them forbidden by a dependency-graph analyser + lint.
+- Layer boundaries are enforced by lint / dependency analysis / the module system, not by convention alone. A lint error must name the safe alternative.
+
 ## Error handling
 
 - No empty catch/except, no swallowed errors.

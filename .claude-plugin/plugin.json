@@ -1,14 +1,28 @@
 {
   "name": "gygabyte",
   "displayName": "Gygabyte Skills",
-  "version": "1.1.1",
-  "description": "Agent Skills for AI coding agents: ai-assisted-coding (Lauren Tan's GrokBot discipline) and core-engineering-standards (clean code, layered architecture, explicit error handling, minimal diffs).",
+  "version": "1.2.0",
+  "description": "Agent Skills for AI coding agents: ai-assisted-coding, core-engineering-standards, enforceable-architecture, runtime-verification, formal-verification, software-factory.",
   "author": {
     "name": "gygabyte.lab",
     "url": "https://github.com/razor322"
   },
   "repository": "https://github.com/razor322/gygabyte-skills",
   "license": "MIT",
-  "keywords": ["agent-skills", "ai-coding", "coding-agent", "code-quality", "engineering-standards", "verification"],
-  "skills": ["./skills/ai-assisted-coding/", "./skills/core-engineering-standards/"]
+  "keywords": [
+    "agent-skills",
+    "ai-coding",
+    "coding-agent",
+    "code-quality",
+    "engineering-standards",
+    "verification"
+  ],
+  "skills": [
+    "./skills/ai-assisted-coding/",
+    "./skills/core-engineering-standards/",
+    "./skills/enforceable-architecture/",
+    "./skills/runtime-verification/",
+    "./skills/formal-verification/",
+    "./skills/software-factory/"
+  ]
 }

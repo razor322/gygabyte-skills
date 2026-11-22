@@ -1,7 +1,7 @@
 {
   "name": "gygabyte",
-  "version": "1.1.1",
-  "description": "Agent Skills for AI coding agents: ai-assisted-coding and core-engineering-standards.",
+  "version": "1.2.0",
+  "description": "Agent Skills for AI coding agents: ai-assisted-coding, core-engineering-standards, enforceable-architecture, runtime-verification, formal-verification, software-factory.",
   "author": {
     "name": "gygabyte.lab",
     "url": "https://github.com/razor322"
@@ -11,10 +11,13 @@
   "interface": {
     "displayName": "Gygabyte Skills",
     "shortDescription": "Reusable discipline for AI coding agents",
-    "longDescription": "Apply Lauren Tan's GrokBot discipline (clean codebase first, lint/tests over comments, one standard pattern, one verification CLI, Feature Map) and core engineering standards (single responsibility, explicit typing, layered architecture, explicit error handling, schema validation, minimal diffs).",
+    "longDescription": "Apply Lauren Tan's GrokBot discipline (clean codebase first, lint/tests over comments, one standard pattern, one verification CLI, Feature Map, trust pyramid, verification-first token spend) and core engineering standards, plus enforceable architecture, runtime verification, formal verification, and the software-factory outer loop.",
     "developerName": "gygabyte.lab",
     "category": "Developer Tools",
-    "capabilities": ["Guide implementation", "Review code quality"],
+    "capabilities": [
+      "Guide implementation",
+      "Review code quality"
+    ],
     "websiteURL": "https://github.com/razor322/gygabyte-skills"
   }
 }

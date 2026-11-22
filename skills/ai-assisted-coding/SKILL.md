@@ -5,14 +5,14 @@ license: MIT
 compatibility: Works with Claude Code, Cursor, Codex, OpenCode, opencode, Muse, and any agent that reads Agent Skills (SKILL.md).
 metadata:
   author: gygabyte.lab
-  version: "1.1.0"
-  source: Lauren Tan (@poteto), GrokBot engineer at SpaceXAI, via @christina.atelier on TikTok ("How A GrokBot Engineer Utilizes AI for Coding")
+  version: "1.2.0"
+  source: Lauren Tan (@poteto), GrokBot engineer at SpaceXAI, via @christina.atelier on TikTok ("How A GrokBot Engineer Utilizes AI for Coding") and her talk "All Code Is Slop (Except Mine)" (14 Nov 2026)
   tags: ["ai-coding", "coding-agent", "refactoring", "lint", "testing", "code-quality"]
 ---
 
 # AI-Assisted Coding
 
-Source: Lauren Tan (@poteto), GrokBot engineer at SpaceXAI. Lauren shipped 2,000 PRs in a month (her X post says 2,500) — the number was not the target, it followed from reusable tools, skills, a codebase AI can understand, and a verification system.
+Source: Lauren Tan (@poteto), GrokBot engineer at SpaceXAI. Lauren shipped 2,000 PRs in a month (her X post says 2,500) — the number was not the target, it followed from reusable tools, skills, a codebase AI can understand, and a verification system. In her talk "All Code Is Slop (Except Mine)" (14 Nov 2026) she updates the figures: she personally shipped 3,000 PRs last month, and the Grok Bot team shipped 11,000 PRs in a month at a ~0.5% revert rate.
 
 Use this skill whenever the user asks to build, change, or debug an app with an AI agent. Apply it before writing new code, not as a cleanup step afterwards.
 
@@ -82,12 +82,29 @@ Use this skill whenever the user asks to build, change, or debug an app with an 
 - Update the Feature Map when a feature is added, renamed, or moved. A stale map is worse than no map if it points at the wrong selector.
 - Template: see `references/feature-map-template.md`.
 
+## 7. Trust pyramid: spend time where it is deterministic
+
+Spend time in this order, largest layer first:
+
+1. **The codebase itself** — good API design, architecture, refactoring.
+2. **Static analysis** — lint rules, type systems, compilers, testing. These two layers constrain what the agent can do and force the right thing by default.
+3. **Verification** — runtime and formal, to find bugs, check properties/invariants, and check whether the agent understood intent.
+4. **Prompts** — rules, skills, `agents.md`. The smallest layer; it requires judgement.
+
+When correcting the agent, first ask how to turn the correction into a deterministic check instead of adding another line to `agents.md`. Code is far more reproducible and trustworthy than a prompt. Detail and examples: see `references/trust-pyramid.md`.
+
+## 8. Spend most tokens on verification
+
+- Verification, not code generation, is the missing ingredient for trusting agents — budget it as the main token spend, not an afterthought. Most of Lauren's token usage goes to verification.
+- Judge an agent system by its **revert rate** and user-visible performance under volume, not by PR count. Grok Bot's evidence: 11,000 PRs in a month at a ~0.5% revert rate, with performance (startup, typing, opening and switching chats) improving at the same time.
+- Review **artefacts, not just diffs**: require the agent to run the app and produce video, screenshots, diagrams, or a state chart as proof. Visualise behaviour as a **state chart** — a state machine drawn from the user's point of view — so a human reviews intent, not just code.
+
 ## Workflow for a new feature or fix
 
 1. Audit: check for workarounds, duplicates, and dead code in the touched area first.
 2. Standard: name the single pattern to use for endpoint, DB, error handling, logging, and module structure.
 3. Build: write code with no excuse-comments; encode rules in API, lint, or tests.
-4. Verify: run the change through the reusable CLI and collect proof it works.
+4. Verify: run the change through the reusable CLI and collect proof it works — video, screenshots, or a state chart, not just a passing test run.
 5. Harden: if AI made a repeated mistake, add a lint / compiler / CI rule before closing the task.
 6. Update: update the Feature Map if the user-facing behaviour changed.
 

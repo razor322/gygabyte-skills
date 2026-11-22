@@ -5,7 +5,7 @@ license: MIT
 compatibility: Language-agnostic. Works with Claude Code, Cursor, Codex, OpenCode, opencode, Muse, and any agent that reads Agent Skills (SKILL.md).
 metadata:
   author: gygabyte.lab
-  version: "1.1.0"
+  version: "1.2.0"
   tags: ["engineering-standards", "clean-code", "architecture", "error-handling", "refactoring", "security"]
 ---
 
@@ -43,9 +43,17 @@ Production-grade, readable, maintainable code. Apply these rules to every file y
 - Comments, if any, explain complex business "why", not "how". Never use a comment to excuse a workaround or to restate a rule that belongs in lint or a test.
 - Sanitize at trust boundaries: prevent SQL injection, XSS, and command injection. Never hardcode secrets.
 
+## 5. Enforceable architecture
+
+- Encode hard-won lessons as enforceable constraints, not advice. Anything that requires nuance to use well tends to produce slop — in human code and especially in agent-written code.
+- **Ban nuance-heavy APIs in product code and provide a safe wrapper instead.** If an API is easy to misuse, forbid its direct use outside the framework/library layer that wraps it safely, and enforce the ban with lint. Example from the Grok Bot team (Lauren Tan, "All Code Is Slop (Except Mine)", 14 Nov 2026): React `useEffect` is banned in product code and allowed only inside the Dune framework APIs — the problem is eliminated categorically instead of being caught again in every review.
+- **Make the correct structure the obvious one through directory structure.** Name directories so the right place for code is self-evident, then enforce the boundary mechanically. Example: Grok Bot/Dune keeps `electron/main` and `electron/renderer` as two top-level directories, and imports between them are forbidden by a dependency-graph analyser plus lint rules — this stopped agents importing main-thread code into the renderer thread, which had caused long tasks and jank.
+- **Enforce layer boundaries mechanically, not by convention alone.** A boundary that only exists in a document is a boundary an agent will cross. Use lint rules, dependency analysis, or the module system to forbid the wrong import/call, with a helpful error message that points at the safe alternative.
+- Detail and examples: see `references/enforceable-architecture.md`.
+
 ## How to apply
 
-Before writing: identify which layer the change belongs to and name the single responsibility of the new function or module.
+Before writing: identify which layer the change belongs to and name the single responsibility of the new function or module. Check whether a lint rule or dependency boundary already forbids the wrong approach — if not, and the mistake is one an agent could repeat, propose adding one.
 
 While writing: keep functions under 30-40 lines, nesting at most two levels, types explicit at boundaries, and constants extracted instead of inlined.
 
